@@ -5,9 +5,7 @@ from std_msgs.msg import Float64MultiArray
 pi = 3.14
 
 
-def controller():
-    rclpy.init()
-    node = rclpy.create_node("bittle_controller")
+def controller(node):
     pub = node.create_publisher(
         Float64MultiArray, "/position_controller/commands", 10
     )
@@ -31,9 +29,12 @@ def controller():
 
 
 if __name__ == "__main__":
+    rclpy.init()
+    node = rclpy.create_node("bittle_controller")
     try:
-        controller()
-    except KeyboardInterrupt:
+        controller(node)
+    except (KeyboardInterrupt, ExternalShutdownException):
         pass
-    except ExternalShutdownException:
-        sys.exit(1)
+    finally:
+        node.destroy_node()
+        rclpy.try_shutdown()
