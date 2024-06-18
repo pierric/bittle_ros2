@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot>
+  <gazebo>
+    <plugin
+      filename="gz-sim-joint-state-publisher-system"
+      name="gz::sim::systems::JointStatePublisher">
+      <joint_name>left_front_knee_joint</joint_name>
+      <joint_name>right_front_knee_joint</joint_name>
+      <joint_name>left_back_knee_joint</joint_name>
+      <joint_name>right_back_knee_joint</joint_name>
+      <joint_name>left_front_shoulder_joint</joint_name>
+      <joint_name>right_front_shoulder_joint</joint_name>
+      <joint_name>left_back_shoulder_joint</joint_name>
+      <joint_name>right_back_shoulder_joint</joint_name>
+    </plugin>
+
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+      <parameters>$(find bittle)/config/controller.yaml</parameters>
+    </plugin>
+  </gazebo>
+</robot>

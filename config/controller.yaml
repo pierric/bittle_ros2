@@ -1,0 +1,27 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000  # Hz
+
+    position_controller:
+      type: position_controllers/JointGroupPositionController
+
+#    joint_trajectory_controller:
+#      type: joint_trajectory_controller/JointTrajectoryController
+
+position_controller:
+#joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - left_back_knee_joint
+      - left_back_shoulder_joint
+      - left_front_knee_joint
+      - left_front_shoulder_joint
+      - right_back_knee_joint
+      - right_back_shoulder_joint
+      - right_front_knee_joint
+      - right_front_shoulder_joint
+#    command_interfaces:
+#      - position
+#    state_interfaces:
+#      - position
+#    allow_partial_joints_goal: false
