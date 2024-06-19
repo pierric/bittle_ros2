@@ -32,9 +32,10 @@ if __name__ == "__main__":
     rclpy.init()
     node = rclpy.create_node("bittle_controller")
     try:
+        print("starting..")
         controller(node)
-    except (KeyboardInterrupt, ExternalShutdownException):
-        pass
+    except (KeyboardInterrupt, ExternalShutdownException) as e:
+        print(e)
     finally:
         node.destroy_node()
         rclpy.try_shutdown()

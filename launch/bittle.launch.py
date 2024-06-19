@@ -109,6 +109,6 @@ def generate_launch_description():
             spawn,
             bridge,
             robot_state_publisher,
-            #rviz,
+            rviz,
         ]
     )
