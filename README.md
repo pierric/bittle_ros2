@@ -16,4 +16,7 @@ docker run --gpus=all -it --rm \
     bittle-sim bash
 ```
 
-Node, nvidia gpu is for accelerating the gazebo sim.
+(nvidia gpu is for accelerating the gazebo sim.)
+
+![image](https://github.com/pierric/bittle_ros2/assets/141614/f61e2d6e-815b-4dc0-9fcb-ed92edfd390a)
+
