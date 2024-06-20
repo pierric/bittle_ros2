@@ -20,3 +20,4 @@ docker run --gpus=all -it --rm \
 
 ![image](https://github.com/pierric/bittle_ros2/assets/141614/f61e2d6e-815b-4dc0-9fcb-ed92edfd390a)
 
+The meshes and URDF orignate and are modified from [this repo](https://github.com/AIWintermuteAI/Bittle_URDF).
